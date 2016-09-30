@@ -35,10 +35,9 @@ final class KPVehiclesListWorker {
                 completion(.success(vehiclesStorage))
                 break
             case let .failure(error):
-                    completion(.failure(error))
+                completion(.failure(error))
                 break
             }
         }
     }
-    
 }

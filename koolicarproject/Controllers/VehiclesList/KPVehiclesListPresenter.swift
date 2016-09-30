@@ -11,12 +11,12 @@
 
 import UIKit
 
-protocol KPVehiclesListPresenterInput {
+public protocol KPVehiclesListPresenterInput {
     func presentVehicles()
     func presentFailVehicles()
 }
 
-protocol KPVehiclesListPresenterOutput: class {
+public protocol KPVehiclesListPresenterOutput: class {
     func displayVehicles()
     func displayFailVehicles()
 }

@@ -28,6 +28,9 @@
 		88367BF11D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BF01D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift */; };
 		88367BF31D9E8CA6003AE4DC /* KPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BF21D9E8CA6003AE4DC /* KPColor.swift */; };
 		88367BF51D9E8CD9003AE4DC /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BF41D9E8CD9003AE4DC /* UIColorExtensions.swift */; };
+		88367BF91D9EA357003AE4DC /* ReusableIdentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */; };
+		88367BFB1D9EA46A003AE4DC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BFA1D9EA46A003AE4DC /* ArrayExtensions.swift */; };
+		88367BFD1D9EA524003AE4DC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BFC1D9EA524003AE4DC /* UIViewExtensions.swift */; };
 		8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */; };
 		886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866219D1D9D735600DE3011 /* AppDelegate.swift */; };
 		886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */; };
@@ -82,6 +85,9 @@
 		88367BF01D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertViewControllerExtensions.swift; sourceTree = "<group>"; };
 		88367BF21D9E8CA6003AE4DC /* KPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPColor.swift; sourceTree = "<group>"; };
 		88367BF41D9E8CD9003AE4DC /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableIdentifierCell.swift; sourceTree = "<group>"; };
+		88367BFA1D9EA46A003AE4DC /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		88367BFC1D9EA524003AE4DC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		886621681D9D721B00DE3011 /* koolicarproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koolicarproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886621771D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +189,14 @@
 				88367BEE1D9E854D003AE4DC /* KPVehicleTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		88367BF71D9EA34F003AE4DC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		8866215F1D9D721B00DE3011 = {
@@ -298,6 +312,8 @@
 			children = (
 				88367BF01D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift */,
 				88367BF41D9E8CD9003AE4DC /* UIColorExtensions.swift */,
+				88367BFA1D9EA46A003AE4DC /* ArrayExtensions.swift */,
+				88367BFC1D9EA524003AE4DC /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 		886621A51D9D735600DE3011 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88367BF71D9EA34F003AE4DC /* Protocol */,
 				88367BD71D9E69B8003AE4DC /* Webservice */,
 				88367BD11D9E6141003AE4DC /* Enum */,
 				88367BCF1D9E6029003AE4DC /* KPDebug.swift */,
@@ -369,6 +386,7 @@
 				886621661D9D721B00DE3011 /* Resources */,
 				597CFFE585ECBEDF9A0284F9 /* [CP] Embed Pods Frameworks */,
 				71232C7CEF491C1143B2679C /* [CP] Copy Pods Resources */,
+				88367BF61D9EA005003AE4DC /* TODO / FIXME */,
 			);
 			buildRules = (
 			);
@@ -542,6 +560,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		88367BF61D9EA005003AE4DC /* TODO / FIXME */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "TODO / FIXME";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${PROJECT_DIR}/koolicarproject/\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
 		A2BE660CFD51CE7251766416 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,8 +663,10 @@
 				88367BE91D9E7B65003AE4DC /* KPVehiclesListViewController.swift in Sources */,
 				886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */,
 				88367BE51D9E7B65003AE4DC /* KPVehiclesListInteractor.swift in Sources */,
+				88367BFB1D9EA46A003AE4DC /* ArrayExtensions.swift in Sources */,
 				886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */,
 				88367BF31D9E8CA6003AE4DC /* KPColor.swift in Sources */,
+				88367BF91D9EA357003AE4DC /* ReusableIdentifierCell.swift in Sources */,
 				88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */,
 				88367BF11D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift in Sources */,
 				88367BEA1D9E7B65003AE4DC /* KPVehiclesListWorker.swift in Sources */,
@@ -643,6 +677,7 @@
 				886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */,
 				88367BF51D9E8CD9003AE4DC /* UIColorExtensions.swift in Sources */,
 				886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */,
+				88367BFD1D9EA524003AE4DC /* UIViewExtensions.swift in Sources */,
 				88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */,
 				886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */,
 				88367BEF1D9E854D003AE4DC /* KPVehicleTableViewCell.swift in Sources */,

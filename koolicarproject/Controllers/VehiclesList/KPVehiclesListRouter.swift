@@ -11,7 +11,7 @@
 
 import UIKit
 
-protocol KPVehiclesListRouterInput {
+public protocol KPVehiclesListRouterInput {
 }
 
 final class KPVehiclesListRouter: KPVehiclesListRouterInput {

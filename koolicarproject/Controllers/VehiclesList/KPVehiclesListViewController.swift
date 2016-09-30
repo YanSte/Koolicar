@@ -11,17 +11,17 @@
 
 import UIKit
 
-protocol KPVehiclesListViewControllerInput {
+public protocol KPVehiclesListViewControllerInput {
     func displayVehicles()
     func displayFailVehicles()
 }
 
-protocol KPVehiclesListViewControllerOutput {
+public protocol KPVehiclesListViewControllerOutput {
     var vehicles: [Vehicle] { get }
     func fetchVehicleData()
 }
 
-final class KPVehiclesListViewController: UIViewController, KPVehiclesListViewControllerInput {
+final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesListViewControllerInput {
     
     @IBOutlet fileprivate weak var tableView: UITableView!
     
@@ -40,6 +40,7 @@ final class KPVehiclesListViewController: UIViewController, KPVehiclesListViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         output.fetchVehicleData()
+        tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
     }
     
     // MARK: Event handling
@@ -59,35 +60,26 @@ final class KPVehiclesListViewController: UIViewController, KPVehiclesListViewCo
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSource {
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let vehicleAtIndex = output.vehicles.get(indexPath.row),
+            let cell = tableView.dequeueReusableCell(withIdentifier: KPVehicleTableViewCell.reusableIdentifier) as? KPVehicleTableViewCell
+            else {
+                return getCellError()
+        }
+        cell.setContent(vehicle: vehicleAtIndex)
+        return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
-    }
-    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // guard let count = self.itemProduct.getAtIndex(section)?.count else { return 0 }
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.vehicles.count
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectedRecipe = itemDataAlerts[indexPath.row]
-        //router.pushFoodDetail()
+    
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    /**
-     Size of Cell
-     
-     - parameter tableView: UITableView
-     - parameter indexPath: NSIndexPath
-     
-     - returns: CGFloat
-     */
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+    
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
     }
 }
