@@ -1,0 +1,826 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03D9A214F754C3633F626930 /* Pods_koolicarprojectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */; };
+		3EBA5828D90681A185AD1CE5 /* Pods_koolicarproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */; };
+		6AD83D675A562026800E0000 /* Pods_koolicarprojectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */; };
+		88367BCC1D9E5492003AE4DC /* koolicarprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */; };
+		8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */; };
+		886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866219D1D9D735600DE3011 /* AppDelegate.swift */; };
+		886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */; };
+		886621AD1D9D735600DE3011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886621A11D9D735600DE3011 /* Main.storyboard */; };
+		886621AE1D9D735600DE3011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886621A81D9D735600DE3011 /* Assets.xcassets */; };
+		886621BE1D9D73CA00DE3011 /* KPGenericInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621B91D9D73CA00DE3011 /* KPGenericInteractor.swift */; };
+		886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BA1D9D73CA00DE3011 /* KPGenericPresenter.swift */; };
+		886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BB1D9D73CA00DE3011 /* KPGenericRouter.swift */; };
+		886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BC1D9D73CA00DE3011 /* KPGenericViewController.swift */; };
+		886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BD1D9D73CA00DE3011 /* KPGenericWorker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8866217D1D9D721B00DE3011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 886621601D9D721B00DE3011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 886621671D9D721B00DE3011;
+			remoteInfo = koolicarproject;
+		};
+		886621881D9D721B00DE3011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 886621601D9D721B00DE3011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 886621671D9D721B00DE3011;
+			remoteInfo = koolicarproject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_koolicarprojectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_koolicarproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413F16B90F18A8F00DE74942 /* Pods-koolicarprojectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E17297ADB8EA3469C7FBF47 /* Pods-koolicarprojectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectUITests/Pods-koolicarprojectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject.debug.xcconfig"; sourceTree = "<group>"; };
+		82396BB6B9887C7F08E339E8 /* Pods-koolicarprojectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = koolicarprojectTests.swift; sourceTree = "<group>"; };
+		886621681D9D721B00DE3011 /* koolicarproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koolicarproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		886621771D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		886621821D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		886621871D9D721B00DE3011 /* koolicarprojectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = koolicarprojectUITests.swift; sourceTree = "<group>"; };
+		8866218D1D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8866219D1D9D735600DE3011 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		886621A01D9D735600DE3011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		886621A21D9D735600DE3011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		886621A81D9D735600DE3011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		886621B91D9D73CA00DE3011 /* KPGenericInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericInteractor.swift; sourceTree = "<group>"; };
+		886621BA1D9D73CA00DE3011 /* KPGenericPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericPresenter.swift; sourceTree = "<group>"; };
+		886621BB1D9D73CA00DE3011 /* KPGenericRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericRouter.swift; sourceTree = "<group>"; };
+		886621BC1D9D73CA00DE3011 /* KPGenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericViewController.swift; sourceTree = "<group>"; };
+		886621BD1D9D73CA00DE3011 /* KPGenericWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericWorker.swift; sourceTree = "<group>"; };
+		B82CB12F22202B39A061A063 /* Pods-koolicarproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject.release.xcconfig"; sourceTree = "<group>"; };
+		C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_koolicarprojectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA052ABD74D832B939B13F11 /* Pods-koolicarprojectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectUITests/Pods-koolicarprojectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		886621651D9D721B00DE3011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBA5828D90681A185AD1CE5 /* Pods_koolicarproject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886621791D9D721B00DE3011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD83D675A562026800E0000 /* Pods_koolicarprojectTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886621841D9D721B00DE3011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D9A214F754C3633F626930 /* Pods_koolicarprojectUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		380917F47995ECB42CEE74C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */,
+				B82CB12F22202B39A061A063 /* Pods-koolicarproject.release.xcconfig */,
+				82396BB6B9887C7F08E339E8 /* Pods-koolicarprojectTests.debug.xcconfig */,
+				413F16B90F18A8F00DE74942 /* Pods-koolicarprojectTests.release.xcconfig */,
+				DA052ABD74D832B939B13F11 /* Pods-koolicarprojectUITests.debug.xcconfig */,
+				5E17297ADB8EA3469C7FBF47 /* Pods-koolicarprojectUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8866215F1D9D721B00DE3011 = {
+			isa = PBXGroup;
+			children = (
+				8866216A1D9D721B00DE3011 /* koolicarproject */,
+				8866217F1D9D721B00DE3011 /* koolicarprojectTests */,
+				8866218A1D9D721B00DE3011 /* koolicarprojectUITests */,
+				886621691D9D721B00DE3011 /* Products */,
+				380917F47995ECB42CEE74C2 /* Pods */,
+				BF3B20504A9541578868C540 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		886621691D9D721B00DE3011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				886621681D9D721B00DE3011 /* koolicarproject.app */,
+				8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */,
+				886621871D9D721B00DE3011 /* koolicarprojectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8866216A1D9D721B00DE3011 /* koolicarproject */ = {
+			isa = PBXGroup;
+			children = (
+				886621991D9D735600DE3011 /* Controllers */,
+				886621A51D9D735600DE3011 /* Models */,
+				886621A31D9D735600DE3011 /* Helpers */,
+				886621A61D9D735600DE3011 /* Support Files */,
+				886621771D9D721B00DE3011 /* Info.plist */,
+			);
+			path = koolicarproject;
+			sourceTree = "<group>";
+		};
+		8866217F1D9D721B00DE3011 /* koolicarprojectTests */ = {
+			isa = PBXGroup;
+			children = (
+				88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */,
+				886621821D9D721B00DE3011 /* Info.plist */,
+			);
+			path = koolicarprojectTests;
+			sourceTree = "<group>";
+		};
+		8866218A1D9D721B00DE3011 /* koolicarprojectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */,
+				8866218D1D9D721B00DE3011 /* Info.plist */,
+			);
+			path = koolicarprojectUITests;
+			sourceTree = "<group>";
+		};
+		886621991D9D735600DE3011 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8866219C1D9D735600DE3011 /* Main */,
+				8866219A1D9D735600DE3011 /* Generic */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8866219A1D9D735600DE3011 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				8866219B1D9D735600DE3011 /* Views */,
+				886621B91D9D73CA00DE3011 /* KPGenericInteractor.swift */,
+				886621BA1D9D73CA00DE3011 /* KPGenericPresenter.swift */,
+				886621BB1D9D73CA00DE3011 /* KPGenericRouter.swift */,
+				886621BC1D9D73CA00DE3011 /* KPGenericViewController.swift */,
+				886621BD1D9D73CA00DE3011 /* KPGenericWorker.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		8866219B1D9D735600DE3011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8866219C1D9D735600DE3011 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8866219E1D9D735600DE3011 /* Views */,
+				8866219D1D9D735600DE3011 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8866219E1D9D735600DE3011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */,
+				886621A11D9D735600DE3011 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		886621A31D9D735600DE3011 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				886621A41D9D735600DE3011 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		886621A41D9D735600DE3011 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		886621A51D9D735600DE3011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		886621A61D9D735600DE3011 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				886621A71D9D735600DE3011 /* Assets */,
+				886621A91D9D735600DE3011 /* Fonts */,
+				886621AA1D9D735600DE3011 /* Frameworks */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		886621A71D9D735600DE3011 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				886621A81D9D735600DE3011 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		886621A91D9D735600DE3011 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		886621AA1D9D735600DE3011 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF3B20504A9541578868C540 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */,
+				186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */,
+				C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		886621671D9D721B00DE3011 /* koolicarproject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886621901D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarproject" */;
+			buildPhases = (
+				E475CBA8F7586A3914B0D7D1 /* [CP] Check Pods Manifest.lock */,
+				886621641D9D721B00DE3011 /* Sources */,
+				886621651D9D721B00DE3011 /* Frameworks */,
+				886621661D9D721B00DE3011 /* Resources */,
+				597CFFE585ECBEDF9A0284F9 /* [CP] Embed Pods Frameworks */,
+				71232C7CEF491C1143B2679C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = koolicarproject;
+			productName = koolicarproject;
+			productReference = 886621681D9D721B00DE3011 /* koolicarproject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8866217B1D9D721B00DE3011 /* koolicarprojectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886621931D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarprojectTests" */;
+			buildPhases = (
+				A81EEED6F80439AC46D4E9EC /* [CP] Check Pods Manifest.lock */,
+				886621781D9D721B00DE3011 /* Sources */,
+				886621791D9D721B00DE3011 /* Frameworks */,
+				8866217A1D9D721B00DE3011 /* Resources */,
+				B33E0A2AC5BAEF77647455F0 /* [CP] Embed Pods Frameworks */,
+				612A89911917E07D7B3438AE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8866217E1D9D721B00DE3011 /* PBXTargetDependency */,
+			);
+			name = koolicarprojectTests;
+			productName = koolicarprojectTests;
+			productReference = 8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		886621861D9D721B00DE3011 /* koolicarprojectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886621961D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarprojectUITests" */;
+			buildPhases = (
+				A2BE660CFD51CE7251766416 /* [CP] Check Pods Manifest.lock */,
+				886621831D9D721B00DE3011 /* Sources */,
+				886621841D9D721B00DE3011 /* Frameworks */,
+				886621851D9D721B00DE3011 /* Resources */,
+				C525A4F05ED18FA3B24658CD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				886621891D9D721B00DE3011 /* PBXTargetDependency */,
+			);
+			name = koolicarprojectUITests;
+			productName = koolicarprojectUITests;
+			productReference = 886621871D9D721B00DE3011 /* koolicarprojectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		886621601D9D721B00DE3011 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = koolicar;
+				TargetAttributes = {
+					886621671D9D721B00DE3011 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+					8866217B1D9D721B00DE3011 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7CBP5Q272D;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 886621671D9D721B00DE3011;
+					};
+					886621861D9D721B00DE3011 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7CBP5Q272D;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 886621671D9D721B00DE3011;
+					};
+				};
+			};
+			buildConfigurationList = 886621631D9D721B00DE3011 /* Build configuration list for PBXProject "koolicarproject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8866215F1D9D721B00DE3011;
+			productRefGroup = 886621691D9D721B00DE3011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				886621671D9D721B00DE3011 /* koolicarproject */,
+				8866217B1D9D721B00DE3011 /* koolicarprojectTests */,
+				886621861D9D721B00DE3011 /* koolicarprojectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		886621661D9D721B00DE3011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */,
+				886621AE1D9D735600DE3011 /* Assets.xcassets in Resources */,
+				886621AD1D9D735600DE3011 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8866217A1D9D721B00DE3011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886621851D9D721B00DE3011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		597CFFE585ECBEDF9A0284F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		612A89911917E07D7B3438AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71232C7CEF491C1143B2679C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2BE660CFD51CE7251766416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A81EEED6F80439AC46D4E9EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B33E0A2AC5BAEF77647455F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C525A4F05ED18FA3B24658CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-koolicarprojectUITests/Pods-koolicarprojectUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E475CBA8F7586A3914B0D7D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		886621641D9D721B00DE3011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */,
+				886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */,
+				886621BE1D9D73CA00DE3011 /* KPGenericInteractor.swift in Sources */,
+				886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */,
+				886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */,
+				886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886621781D9D721B00DE3011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88367BCC1D9E5492003AE4DC /* koolicarprojectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886621831D9D721B00DE3011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8866217E1D9D721B00DE3011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 886621671D9D721B00DE3011 /* koolicarproject */;
+			targetProxy = 8866217D1D9D721B00DE3011 /* PBXContainerItemProxy */;
+		};
+		886621891D9D721B00DE3011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 886621671D9D721B00DE3011 /* koolicarproject */;
+			targetProxy = 886621881D9D721B00DE3011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				886621A01D9D735600DE3011 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		886621A11D9D735600DE3011 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				886621A21D9D735600DE3011 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8866218E1D9D721B00DE3011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8866218F1D9D721B00DE3011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		886621911D9D721B00DE3011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = koolicarproject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarproject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		886621921D9D721B00DE3011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B82CB12F22202B39A061A063 /* Pods-koolicarproject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = koolicarproject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarproject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		886621941D9D721B00DE3011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82396BB6B9887C7F08E339E8 /* Pods-koolicarprojectTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
+				INFOPLIST_FILE = koolicarprojectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarprojectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/koolicarproject.app/koolicarproject";
+			};
+			name = Debug;
+		};
+		886621951D9D721B00DE3011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413F16B90F18A8F00DE74942 /* Pods-koolicarprojectTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
+				INFOPLIST_FILE = koolicarprojectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarprojectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/koolicarproject.app/koolicarproject";
+			};
+			name = Release;
+		};
+		886621971D9D721B00DE3011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA052ABD74D832B939B13F11 /* Pods-koolicarprojectUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
+				INFOPLIST_FILE = koolicarprojectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarprojectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = koolicarproject;
+			};
+			name = Debug;
+		};
+		886621981D9D721B00DE3011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E17297ADB8EA3469C7FBF47 /* Pods-koolicarprojectUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
+				INFOPLIST_FILE = koolicarprojectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarprojectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = koolicarproject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		886621631D9D721B00DE3011 /* Build configuration list for PBXProject "koolicarproject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8866218E1D9D721B00DE3011 /* Debug */,
+				8866218F1D9D721B00DE3011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886621901D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarproject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886621911D9D721B00DE3011 /* Debug */,
+				886621921D9D721B00DE3011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886621931D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarprojectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886621941D9D721B00DE3011 /* Debug */,
+				886621951D9D721B00DE3011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886621961D9D721B00DE3011 /* Build configuration list for PBXNativeTarget "koolicarprojectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886621971D9D721B00DE3011 /* Debug */,
+				886621981D9D721B00DE3011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 886621601D9D721B00DE3011 /* Project object */;
+}
