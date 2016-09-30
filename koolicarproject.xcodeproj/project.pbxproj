@@ -10,7 +10,7 @@
 		03D9A214F754C3633F626930 /* Pods_koolicarprojectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */; };
 		3EBA5828D90681A185AD1CE5 /* Pods_koolicarproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */; };
 		6AD83D675A562026800E0000 /* Pods_koolicarprojectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */; };
-		88367BCC1D9E5492003AE4DC /* koolicarprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */; };
+		88367BCC1D9E5492003AE4DC /* VehiculTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCB1D9E5492003AE4DC /* VehiculTests.swift */; };
 		88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCF1D9E6029003AE4DC /* KPDebug.swift */; };
 		88367BD31D9E6148003AE4DC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD21D9E6148003AE4DC /* Result.swift */; };
 		88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD51D9E6814003AE4DC /* Vehicle.swift */; };
@@ -52,7 +52,7 @@
 		5E17297ADB8EA3469C7FBF47 /* Pods-koolicarprojectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectUITests/Pods-koolicarprojectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject.debug.xcconfig"; sourceTree = "<group>"; };
 		82396BB6B9887C7F08E339E8 /* Pods-koolicarprojectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = koolicarprojectTests.swift; sourceTree = "<group>"; };
+		88367BCB1D9E5492003AE4DC /* VehiculTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiculTests.swift; sourceTree = "<group>"; };
 		88367BCF1D9E6029003AE4DC /* KPDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDebug.swift; sourceTree = "<group>"; };
 		88367BD21D9E6148003AE4DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		88367BD51D9E6814003AE4DC /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		8866217F1D9D721B00DE3011 /* koolicarprojectTests */ = {
 			isa = PBXGroup;
 			children = (
-				88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */,
+				88367BCB1D9E5492003AE4DC /* VehiculTests.swift */,
 				886621821D9D721B00DE3011 /* Info.plist */,
 			);
 			path = koolicarprojectTests;
@@ -589,7 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88367BCC1D9E5492003AE4DC /* koolicarprojectTests.swift in Sources */,
+				88367BCC1D9E5492003AE4DC /* VehiculTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

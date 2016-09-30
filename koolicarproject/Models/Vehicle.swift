@@ -9,48 +9,60 @@
 import Foundation
 import ObjectMapper
 
-/*
- "address_id": 70076,
- "id": 10749,
- "year": 2012,
- "doors_count": 5,
- "places_count": 5,
- 
- "fuel_type_cd": 0,
- "gears_type_cd": 1,
- "vehicle_model": "Micra",
- "brand": "Nissan",
- "category": "CITADINE",
- "thumbnail_url": "https://koolicar.s3.amazonaws.com/uploads/photo/6103/thumb_2015-11-09_16.13.02.jpg",
- "distance_string": "Paris 11'e8me",
- "fake_latitude": 48.8619248152841,
- "fake_longitude": 2.38026285387939
-
-
-class Vehicle: Mappable {
-    var id: Int
-    var addressId: Int
-    var year: Int
-    var doorsCount: Int
-    var placesCount: Int
-    var fuelTypeCd: Int
-    var gears_type_cd:Int
+public struct Vehicle: Mappable {
     
-
+    private(set) var id:            Int!
+    private(set) var addressId:     Int!
+    private(set) var year:          Int!
+    private(set) var doorsCount:    Int!
+    private(set) var placesCount:   Int!
+    private(set) var fuelTypeCd:    Int!
+    private(set) var gearsTypeCd:   Int!
+    private(set) var vehicle_model: String!
+    private(set) var brand:         String!
+    private(set) var category:      String!
+    private(set) var thumbnailUrl:  String!
+    private(set) var distance:      String?
+    private(set) var latitude:      Double!
+    private(set) var longitude:     Double!
     
-    required init?(map: Map) {
-        
+    public init?(map: Map) {
+        guard
+            map.JSON["id"]              != nil,
+            map.JSON["address_id"]      != nil,
+            map.JSON["year"]            != nil,
+            map.JSON["doors_count"]     != nil,
+            map.JSON["places_count"]    != nil,
+            map.JSON["fuel_type_cd"]    != nil,
+            map.JSON["gears_type_cd"]   != nil,
+            map.JSON["places_count"]    != nil,
+            map.JSON["vehicle_model"]   != nil,
+            map.JSON["brand"]           != nil,
+            map.JSON["category"]        != nil,
+            map.JSON["thumbnail_url"]   != nil,
+            map.JSON["fake_latitude"]   != nil,
+            map.JSON["fake_longitude"]  != nil
+            else {
+                return nil
+        }
+        mapping(map: map)
     }
     
     // Mappable
-    func mapping(map: Map) {
-       /* username    <- map["username"]
-        age         <- map["age"]
-        weight      <- map["weight"]
-        array       <- map["arr"]
-        dictionary  <- map["dict"]
-        bestFriend  <- map["best_friend"]
-        friends     <- map["friends"]
-        birthday    <- (map["birthday"], DateTransform())*/
+    public mutating func mapping(map: Map) {
+        id              <- map["id"]
+        addressId       <- map["address_id"]
+        year            <- map["year"]
+        doorsCount      <- map["doors_count"]
+        placesCount     <- map["places_count"]
+        fuelTypeCd      <- map["fuel_type_cd"]
+        gearsTypeCd     <- map["gears_type_cd"]
+        vehicle_model   <- map["vehicle_model"]
+        brand           <- map["brand"]
+        category        <- map["category"]
+        thumbnailUrl    <- map["thumbnail_url"]
+        distance        <- map["distance_string"]
+        latitude        <- map["fake_latitude"]
+        longitude       <- map["fake_longitude"]
     }
-} */
+}
