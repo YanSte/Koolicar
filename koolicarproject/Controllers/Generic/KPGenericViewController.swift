@@ -40,4 +40,5 @@ public class KPGenericViewController: UIViewController {
         cell.backgroundColor = UIColor.red
         return cell
     }
+
 }

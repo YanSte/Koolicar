@@ -14,17 +14,10 @@ import UIKit
 public protocol KPVehiclesListRouterInput {
 }
 
-final class KPVehiclesListRouter: KPVehiclesListRouterInput {
-    
-    weak var viewController: KPVehiclesListViewController!
+final class KPVehiclesListRouter: KPGenericRouter<KPVehiclesListViewController>, KPVehiclesListRouterInput {
     
     // MARK: Navigation
     
     // MARK: Communication
-    
-    func passDataToNextScene(segue: UIStoryboardSegue) {
-        // NOTE: Teach the router which scenes it can communicate with
-        
-        /* if segue.identifier == "ShowSomewhereScene" { } */
-    }
+
 }

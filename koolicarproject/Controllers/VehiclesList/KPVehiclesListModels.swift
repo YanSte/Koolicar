@@ -11,6 +11,10 @@
 
 import UIKit
 
+public enum KPVehiclesListError: String, Error {
+    case noNetwork =  "Vous n'avez pas internet"
+    case noData =  "Aucun donnée est disponible"
+}
 
 struct KPVehiclesListModel {
     

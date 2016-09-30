@@ -13,12 +13,12 @@ import UIKit
 
 public protocol KPVehiclesListPresenterInput {
     func presentVehicles()
-    func presentFailVehicles()
+    func presentFailVehicles(error: KPVehiclesListError)
 }
 
 public protocol KPVehiclesListPresenterOutput: class {
     func displayVehicles()
-    func displayFailVehicles()
+    func displayFailVehicles(description:String)
 }
 
 final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
@@ -31,8 +31,7 @@ final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
         output.displayVehicles()
     }
     
-    func presentFailVehicles() {
-        output.displayFailVehicles()
+    public func presentFailVehicles(error: KPVehiclesListError) {
+        output.displayFailVehicles(description: error.rawValue)
     }
-    
 }

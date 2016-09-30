@@ -13,7 +13,7 @@ import UIKit
 
 public protocol KPVehiclesListViewControllerInput {
     func displayVehicles()
-    func displayFailVehicles()
+    func displayFailVehicles(description:String)
 }
 
 public protocol KPVehiclesListViewControllerOutput {
@@ -39,8 +39,17 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.fetchVehicleData()
         tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
+        tableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output.fetchVehicleData()
     }
     
     // MARK: Event handling
@@ -51,10 +60,9 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         tableView.reloadData()
     }
     
-    func displayFailVehicles() {
-        UIAlertController.openKPStandardAlert(delegate: self, title: "", message: "", buttonCancel: "ok")
+    func displayFailVehicles(description:String) {
+        UIAlertController.openKPStandardAlert(delegate: self, title: "Un erreur c'est produite", message: description, buttonCancel: "Ok")
     }
-    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -77,9 +85,10 @@ extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 420
     }
 }

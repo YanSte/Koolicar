@@ -11,6 +11,7 @@
 
 import UIKit
 
+
 public protocol KPVehiclesListInteractorInput {
     func fetchVehicleData()
     var vehicles: [Vehicle] { get }
@@ -18,10 +19,10 @@ public protocol KPVehiclesListInteractorInput {
 
 public protocol KPVehiclesListInteractorOutput {
     func presentVehicles()
-    func presentFailVehicles()
+    func presentFailVehicles(error: KPVehiclesListError)
 }
 
-final class KPVehiclesListInteractor: KPVehiclesListInteractorInput {
+final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInteractorInput {
     
     var output: KPVehiclesListInteractorOutput!
     var worker: KPVehiclesListWorker!
@@ -29,8 +30,12 @@ final class KPVehiclesListInteractor: KPVehiclesListInteractorInput {
     private(set) var vehicles: [Vehicle] = []
     
     // MARK: Business logic
-    
+    //TODO: intépreter les retours fails
     func fetchVehicleData() {
+        guard KPHelpers.isConnectedToNetwork() else {
+            output.presentFailVehicles(error: .noNetwork)
+            return
+        }
         KPVehiclesListWorker.requestVehicles() {
             result in
             switch (result) {
@@ -38,9 +43,9 @@ final class KPVehiclesListInteractor: KPVehiclesListInteractorInput {
                 self.vehicles = result
                 self.output.presentVehicles()
                 break
-            //TODO: intépreter les retours fails
+            
             case .failure(_):
-                self.output.presentFailVehicles()
+                self.output.presentFailVehicles(error: .noData)
                 break
             }
         }

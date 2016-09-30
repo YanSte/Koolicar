@@ -13,12 +13,14 @@ import AlamofireImage
 final class KPVehicleTableViewCell: UITableViewCell, ReusableIdentifierCell {
     
     @IBOutlet fileprivate weak var vehicleImageView: UIImageView!
+    @IBOutlet fileprivate weak var containerView:    UIView!
     
     static let reusableIdentifier = "KPVehicleTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
