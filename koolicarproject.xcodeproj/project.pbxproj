@@ -11,6 +11,11 @@
 		3EBA5828D90681A185AD1CE5 /* Pods_koolicarproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */; };
 		6AD83D675A562026800E0000 /* Pods_koolicarprojectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */; };
 		88367BCC1D9E5492003AE4DC /* koolicarprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */; };
+		88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCF1D9E6029003AE4DC /* KPDebug.swift */; };
+		88367BD31D9E6148003AE4DC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD21D9E6148003AE4DC /* Result.swift */; };
+		88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD51D9E6814003AE4DC /* Vehicle.swift */; };
+		88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD81D9E69B8003AE4DC /* WSConfig.swift */; };
+		88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDA1D9E69CB003AE4DC /* WSResponse.swift */; };
 		8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */; };
 		886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866219D1D9D735600DE3011 /* AppDelegate.swift */; };
 		886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */; };
@@ -48,6 +53,11 @@
 		706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject.debug.xcconfig"; sourceTree = "<group>"; };
 		82396BB6B9887C7F08E339E8 /* Pods-koolicarprojectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectTests/Pods-koolicarprojectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88367BCB1D9E5492003AE4DC /* koolicarprojectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = koolicarprojectTests.swift; sourceTree = "<group>"; };
+		88367BCF1D9E6029003AE4DC /* KPDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDebug.swift; sourceTree = "<group>"; };
+		88367BD21D9E6148003AE4DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		88367BD51D9E6814003AE4DC /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		88367BD81D9E69B8003AE4DC /* WSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSConfig.swift; sourceTree = "<group>"; };
+		88367BDA1D9E69CB003AE4DC /* WSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSResponse.swift; sourceTree = "<group>"; };
 		886621681D9D721B00DE3011 /* koolicarproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koolicarproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886621771D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +118,23 @@
 				5E17297ADB8EA3469C7FBF47 /* Pods-koolicarprojectUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		88367BD11D9E6141003AE4DC /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				88367BD21D9E6148003AE4DC /* Result.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		88367BD71D9E69B8003AE4DC /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				88367BD81D9E69B8003AE4DC /* WSConfig.swift */,
+				88367BDA1D9E69CB003AE4DC /* WSResponse.swift */,
+			);
+			path = Webservice;
 			sourceTree = "<group>";
 		};
 		8866215F1D9D721B00DE3011 = {
@@ -227,6 +254,10 @@
 		886621A51D9D735600DE3011 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88367BD71D9E69B8003AE4DC /* Webservice */,
+				88367BD11D9E6141003AE4DC /* Enum */,
+				88367BCF1D9E6029003AE4DC /* KPDebug.swift */,
+				88367BD51D9E6814003AE4DC /* Vehicle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -540,11 +571,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */,
+				88367BD31D9E6148003AE4DC /* Result.swift in Sources */,
 				886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */,
 				886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */,
+				88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */,
+				88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */,
 				886621BE1D9D73CA00DE3011 /* KPGenericInteractor.swift in Sources */,
 				886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */,
 				886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */,
+				88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */,
 				886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

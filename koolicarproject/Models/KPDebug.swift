@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+enum KPDebug {
+    
+    static var debug = false
+    
+    static func print(val:String) {
+        if debug {
+            Swift.print(val)
+        }
+    }
+}
