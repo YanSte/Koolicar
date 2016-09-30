@@ -9,13 +9,13 @@
 import XCTest
 @testable import koolicarproject
 
-class VehiculTests: XCTestCase {
+class VehiclesTests: XCTestCase {
     
     var expectation:XCTestExpectation?
     
     func testGetCars() {
         
-       expectation = expectation(description: "TestGetVehicul")
+        expectation = expectation(description: "TestGetVehicul")
         
         KPGenericWorker.resquest(method: .get, service: WSConfig.Cars(additional: "test.json")) {
             result in
@@ -28,13 +28,13 @@ class VehiculTests: XCTestCase {
                 self.expectation?.fulfill()
                 XCTAssert(false)
                 break
-            } 
+            }
         }
         waitForExpectations(timeout: 20.0, handler:nil)
     }
- 
+    
     func testParseCars() {
- 
+        
         expectation = expectation(description: "TestParseVehicul")
         
         KPGenericWorker.resquest(method: .get, service: WSConfig.Cars(additional: "test.json")) {
@@ -48,7 +48,6 @@ class VehiculTests: XCTestCase {
                 self.expectation?.fulfill()
                 for vehicul in vehiculs {
                     let vehiculs = Vehicle(JSON: vehicul)
-                    KPDebug.print(val: vehiculs?.id)
                     XCTAssert(vehiculs != nil)
                     XCTAssert(vehiculs?.id != nil)
                     XCTAssert(vehiculs?.addressId != nil)

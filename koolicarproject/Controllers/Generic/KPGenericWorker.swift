@@ -16,6 +16,7 @@ public class KPGenericWorker {
     
     /**
      * Generic method alamofire
+     * La sur implémentation me permet d'intépreter les code Http, les code error dans le JSON du WS pour l'intépreter avec un Enum définit avant voir exemple
      *
      */
     static func resquest(
@@ -29,6 +30,7 @@ public class KPGenericWorker {
                 response.result.isSuccess,
                 let value = response.result.value as? [String:AnyObject] else {
                     // Exemple pour savoir plus sur l'erreur HTTP
+                    // Peut avoir value["coderror"] == nil // exemple insertion d'un utilisateur existant
                     if let httpError = response.result.error,
                         let responseWS = WSResponse(rawValue: httpError._code) {
                         KPDebug.print(val: "[KPGenericWorker][resquest][⚠️] Http Code error: \(response.result.error))")

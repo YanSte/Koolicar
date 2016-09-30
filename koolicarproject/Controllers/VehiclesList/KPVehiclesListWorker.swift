@@ -15,4 +15,30 @@ final class KPVehiclesListWorker {
     
     // MARK: Business Logic
     
+    static func requestVehicles(completion: @escaping ResultAPIVehicles) {
+        KPGenericWorker.resquest(method: .get, service: WSConfig.Cars(additional: "test.json")) {
+            result in
+            switch (result) {
+            case let .success(result):
+                guard let vehiculs = result["vehicles"] as? [[String:Any]], vehiculs.count > 0 else {
+                    completion(.failure(.noData))
+                    return
+                }
+                var vehiclesStorage = [Vehicle]()
+                for vehicul in vehiculs {
+                    if let vehicles = Vehicle(JSON: vehicul) {
+                        vehiclesStorage.append(vehicles)
+                    } else {
+                        KPDebug.print(val: "[KPVehiclesListWorker][requestVehicles][⚠️] Can't parse Vehicle")
+                    }
+                }
+                completion(.success(vehiclesStorage))
+                break
+            case let .failure(error):
+                    completion(.failure(error))
+                break
+            }
+        }
+    }
+    
 }

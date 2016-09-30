@@ -12,9 +12,13 @@
 import UIKit
 
 protocol KPVehiclesListPresenterInput {
+    func presentVehicles()
+    func presentFailVehicles()
 }
 
 protocol KPVehiclesListPresenterOutput: class {
+    func displayVehicles()
+    func displayFailVehicles()
 }
 
 final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
@@ -22,5 +26,13 @@ final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
     weak var output: KPVehiclesListPresenterOutput!
     
     // MARK: Presentation logic
+    
+    func presentVehicles() {
+        output.displayVehicles()
+    }
+    
+    func presentFailVehicles() {
+        output.displayFailVehicles()
+    }
     
 }

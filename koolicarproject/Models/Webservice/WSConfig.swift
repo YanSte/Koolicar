@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias ResultAPI   = (Result<[String:AnyObject], WSResponse>) -> ()
+typealias ResultAPI           = (Result<[String:AnyObject], WSResponse>) -> ()
+typealias ResultAPIVehicles   = (Result<[Vehicle], WSResponse>) -> ()
 
 /**
  * Enumerateur pour la config des WS

@@ -12,9 +12,13 @@
 import UIKit
 
 protocol KPVehiclesListInteractorInput {
+    func fetchVehicleData()
+    var vehicles: [Vehicle] { get }
 }
 
 protocol KPVehiclesListInteractorOutput {
+    func presentVehicles()
+    func presentFailVehicles()
 }
 
 final class KPVehiclesListInteractor: KPVehiclesListInteractorInput {
@@ -22,6 +26,23 @@ final class KPVehiclesListInteractor: KPVehiclesListInteractorInput {
     var output: KPVehiclesListInteractorOutput!
     var worker: KPVehiclesListWorker!
     
+    private(set) var vehicles: [Vehicle] = []
+    
     // MARK: Business logic
     
+    func fetchVehicleData() {
+        KPVehiclesListWorker.requestVehicles() {
+            result in
+            switch (result) {
+            case let .success(result):
+                self.vehicles = result
+                self.output.presentVehicles()
+                break
+            //TODO: intépreter les retours fails
+            case .failure(_):
+                self.output.presentFailVehicles()
+                break
+            }
+        }
+    }
 }

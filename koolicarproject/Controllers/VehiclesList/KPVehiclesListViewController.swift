@@ -12,12 +12,18 @@
 import UIKit
 
 protocol KPVehiclesListViewControllerInput {
+    func displayVehicles()
+    func displayFailVehicles()
 }
 
 protocol KPVehiclesListViewControllerOutput {
+    var vehicles: [Vehicle] { get }
+    func fetchVehicleData()
 }
 
 final class KPVehiclesListViewController: UIViewController, KPVehiclesListViewControllerInput {
+    
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
     var output: KPVehiclesListViewControllerOutput!
     var router: KPVehiclesListRouter!
@@ -33,10 +39,55 @@ final class KPVehiclesListViewController: UIViewController, KPVehiclesListViewCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.fetchVehicleData()
     }
     
     // MARK: Event handling
     
     // MARK: Display logic
     
+    func displayVehicles() {
+        tableView.reloadData()
+    }
+    
+    func displayFailVehicles() {
+        UIAlertController.openKPStandardAlert(delegate: self, title: "", message: "", buttonCancel: "ok")
+    }
+    
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSource {
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
+    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // guard let count = self.itemProduct.getAtIndex(section)?.count else { return 0 }
+        return output.vehicles.count
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //selectedRecipe = itemDataAlerts[indexPath.row]
+        //router.pushFoodDetail()
+    }
+    /**
+     Size of Cell
+     
+     - parameter tableView: UITableView
+     - parameter indexPath: NSIndexPath
+     
+     - returns: CGFloat
+     */
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
