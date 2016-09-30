@@ -16,6 +16,13 @@
 		88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD51D9E6814003AE4DC /* Vehicle.swift */; };
 		88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD81D9E69B8003AE4DC /* WSConfig.swift */; };
 		88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDA1D9E69CB003AE4DC /* WSResponse.swift */; };
+		88367BE41D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDD1D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift */; };
+		88367BE51D9E7B65003AE4DC /* KPVehiclesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDE1D9E7B65003AE4DC /* KPVehiclesListInteractor.swift */; };
+		88367BE61D9E7B65003AE4DC /* KPVehiclesListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDF1D9E7B65003AE4DC /* KPVehiclesListModels.swift */; };
+		88367BE71D9E7B65003AE4DC /* KPVehiclesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BE01D9E7B65003AE4DC /* KPVehiclesListPresenter.swift */; };
+		88367BE81D9E7B65003AE4DC /* KPVehiclesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BE11D9E7B65003AE4DC /* KPVehiclesListRouter.swift */; };
+		88367BE91D9E7B65003AE4DC /* KPVehiclesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BE21D9E7B65003AE4DC /* KPVehiclesListViewController.swift */; };
+		88367BEA1D9E7B65003AE4DC /* KPVehiclesListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BE31D9E7B65003AE4DC /* KPVehiclesListWorker.swift */; };
 		8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */; };
 		886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866219D1D9D735600DE3011 /* AppDelegate.swift */; };
 		886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */; };
@@ -58,6 +65,13 @@
 		88367BD51D9E6814003AE4DC /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		88367BD81D9E69B8003AE4DC /* WSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSConfig.swift; sourceTree = "<group>"; };
 		88367BDA1D9E69CB003AE4DC /* WSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSResponse.swift; sourceTree = "<group>"; };
+		88367BDD1D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListConfigurator.swift; sourceTree = "<group>"; };
+		88367BDE1D9E7B65003AE4DC /* KPVehiclesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListInteractor.swift; sourceTree = "<group>"; };
+		88367BDF1D9E7B65003AE4DC /* KPVehiclesListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListModels.swift; sourceTree = "<group>"; };
+		88367BE01D9E7B65003AE4DC /* KPVehiclesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListPresenter.swift; sourceTree = "<group>"; };
+		88367BE11D9E7B65003AE4DC /* KPVehiclesListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListRouter.swift; sourceTree = "<group>"; };
+		88367BE21D9E7B65003AE4DC /* KPVehiclesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListViewController.swift; sourceTree = "<group>"; };
+		88367BE31D9E7B65003AE4DC /* KPVehiclesListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListWorker.swift; sourceTree = "<group>"; };
 		886621681D9D721B00DE3011 /* koolicarproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koolicarproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886621771D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +151,20 @@
 			path = Webservice;
 			sourceTree = "<group>";
 		};
+		88367BDC1D9E7B50003AE4DC /* VehiclesList */ = {
+			isa = PBXGroup;
+			children = (
+				88367BDD1D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift */,
+				88367BDE1D9E7B65003AE4DC /* KPVehiclesListInteractor.swift */,
+				88367BDF1D9E7B65003AE4DC /* KPVehiclesListModels.swift */,
+				88367BE01D9E7B65003AE4DC /* KPVehiclesListPresenter.swift */,
+				88367BE11D9E7B65003AE4DC /* KPVehiclesListRouter.swift */,
+				88367BE21D9E7B65003AE4DC /* KPVehiclesListViewController.swift */,
+				88367BE31D9E7B65003AE4DC /* KPVehiclesListWorker.swift */,
+			);
+			path = VehiclesList;
+			sourceTree = "<group>";
+		};
 		8866215F1D9D721B00DE3011 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +220,7 @@
 		886621991D9D735600DE3011 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				88367BDC1D9E7B50003AE4DC /* VehiclesList */,
 				8866219C1D9D735600DE3011 /* Main */,
 				8866219A1D9D735600DE3011 /* Generic */,
 			);
@@ -571,13 +600,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88367BE81D9E7B65003AE4DC /* KPVehiclesListRouter.swift in Sources */,
+				88367BE41D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift in Sources */,
 				88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */,
 				88367BD31D9E6148003AE4DC /* Result.swift in Sources */,
+				88367BE91D9E7B65003AE4DC /* KPVehiclesListViewController.swift in Sources */,
 				886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */,
+				88367BE51D9E7B65003AE4DC /* KPVehiclesListInteractor.swift in Sources */,
 				886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */,
 				88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */,
+				88367BEA1D9E7B65003AE4DC /* KPVehiclesListWorker.swift in Sources */,
+				88367BE61D9E7B65003AE4DC /* KPVehiclesListModels.swift in Sources */,
 				88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */,
 				886621BE1D9D73CA00DE3011 /* KPGenericInteractor.swift in Sources */,
+				88367BE71D9E7B65003AE4DC /* KPVehiclesListPresenter.swift in Sources */,
 				886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */,
 				886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */,
 				88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */,
