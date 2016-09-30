@@ -14,14 +14,13 @@ typealias ResultAPIVehicles   = (Result<[Vehicle], WSResponse>) -> ()
 /**
  * Enumerateur pour la config des WS
  */
-enum WSConfig {
+public enum WSConfig {
     
     case Cars(additional: String)
     // ...
 }
 
-
-extension WSConfig {
+public extension WSConfig {
     
     var baseURL: String {
         return "http://yannickstephan.com/test/"

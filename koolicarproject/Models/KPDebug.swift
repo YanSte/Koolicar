@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum KPDebug {
+public enum KPDebug {
     
     static var debug = false
     

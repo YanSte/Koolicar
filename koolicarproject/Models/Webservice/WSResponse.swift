@@ -11,7 +11,7 @@ import Foundation
 /**
  * Enumerateur pour les retours WS et code error
  */
-enum WSResponse: Int, Error {
+public enum WSResponse: Int, Error {
     
     case response200   = 200
     case response400   = 400
