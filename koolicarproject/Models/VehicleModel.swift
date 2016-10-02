@@ -20,7 +20,7 @@ public func ==(lhs: VehicleModel, rhs: VehicleModel) -> Bool {
 
 // MARK: Vehicle Model
 
-public struct VehicleModelVehicleModel: Mappable {
+public struct VehicleModel: Mappable {
     
     private(set) var id:            Int
     private(set) var addressId:     Int
