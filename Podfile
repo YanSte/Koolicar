@@ -7,6 +7,10 @@ def shared_pods
     pod 'Alamofire', '4.0.0'
     pod 'AlamofireImage', '3.0.0'
     pod 'ObjectMapper', '2.0.0'
+    pod 'MXParallaxHeader', '0.5.2'
+    pod 'VBPiledView', '~> 1.0'
+    pod 'ImageSlideshow',  :git => 'https://github.com/zvonicek/ImageSlideshow.git', :branch => 'swift-3'
+    pod 'NVActivityIndicatorView', '3.0'
 end
 
 target 'koolicarproject' do
