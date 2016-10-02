@@ -47,7 +47,7 @@ class VehiclesTests: XCTestCase {
                 }
                 self.expectation?.fulfill()
                 for vehicul in vehiculs {
-                    let vehiculs = Vehicle(JSON: vehicul)
+                    let vehiculs = VehicleModel(JSON: vehicul)
                     XCTAssert(vehiculs != nil)
                     XCTAssert(vehiculs?.id != nil)
                     XCTAssert(vehiculs?.addressId != nil)
