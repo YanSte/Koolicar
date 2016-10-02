@@ -45,11 +45,12 @@ final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInterac
             case let .success(result):
                 self.vehiclesStorage = result
                 self.vehicles = self.vehiclesStorage
-                //self.output.presentVehicles()
                 self.output.presentVehiclesMap()
                 break
                 
+                
             case .failure(_):
+                // TODO: Intépreter les codes error et Http avec un enumérateur, ici mit en dur
                 self.output.presentFailVehicles(error: .noData)
                 break
             }
@@ -70,26 +71,25 @@ final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInterac
     
     fileprivate func filterVehiclesByCoordinates(coordinates: [CLLocationCoordinate2D]) -> [VehicleModel]? {
         var vehiclesFilter = [VehicleModel]()
-        var reload = false
+        var reloadNeed = false
         for coordinate in coordinates {
             let vehiclesFilterCoordinate = self.vehiclesStorage.filter({
-                $0.location.latitude ==  coordinate.latitude &&
-                    $0.location.longitude ==  coordinate.longitude
-                
+                $0.location.latitude == coordinate.latitude &&
+                $0.location.longitude == coordinate.longitude
             })
-            
             for v in vehiclesFilterCoordinate {
                 if !vehiclesFilter.contains(v) {
                     vehiclesFilter.append(v)
                 }
             }
-            if !reload {
-                for v in vehiclesFilter {
-                    reload = !self.vehicles.contains(v) ? true : false
-                }
+        }
+        for v in vehiclesFilter {
+            if !self.vehicles.contains(v) {
+                reloadNeed = true
+                break
             }
         }
         // Pour ne recharger que si besoin
-        return (reload || !(vehiclesFilter.count == self.vehicles.count)) ? vehiclesFilter : nil
+        return (reloadNeed || !(vehiclesFilter.count == self.vehicles.count)) ? vehiclesFilter : nil
     }
 }

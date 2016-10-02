@@ -9,14 +9,7 @@
 import UIKit
 
 public extension UIAlertController {
-    /* --------------------------------------------------------------------------- */
-    //                          MARK: - Standart Alert
-    /* --------------------------------------------------------------------------- */
-    
-    /**
-     Open alert
-     
-     */
+
     public class func openKPStandardAlert(
         delegate:UIViewController,
         title:String?,

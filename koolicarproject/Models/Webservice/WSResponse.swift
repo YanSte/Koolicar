@@ -10,7 +10,8 @@ import Foundation
 
 /**
  * WSResponse
- * @brief: Enumerateur pour les retours WS et code error
+ *
+ * Enumerateur pour les retours WS et code error
  */
 public enum WSResponse: Int, Error {
     

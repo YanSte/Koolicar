@@ -17,7 +17,7 @@ public class KPGenericWorker {
     /**
      * Generic method alamofire
      *
-     * Permet d'intépreter les codes Http, les codes error dans le JSON du retour du WS pour l'intépreter avec un Enum des errors possibles, (Communication, retour WS)
+     * Permets d'interpréter les codes Http, les codes error dans le JSON du retour du WS pour l'interprèter avec un enumérateur des errors possibles, (Communication, retour WS)
      *
      */
     static func resquest(

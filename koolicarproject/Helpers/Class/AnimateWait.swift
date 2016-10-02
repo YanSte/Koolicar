@@ -20,26 +20,27 @@ final class AnimateWaitView:UIView {
     }
     
     class func animateOut(delegateView:UIView, completion:(()->())? = nil) {
-        
         guard let hasWaitView = delegateView.viewWithTag(666) else {
             return
         }
         UIView.animate(withDuration: 0.5, delay: 0.2, options: UIViewAnimationOptions.curveEaseOut, animations: {
             hasWaitView.alpha = 0
-            
-        }) { (bool) -> Void in
-            hasWaitView.removeFromSuperview()
-            for subview in delegateView.subviews where subview.tag == 666 { subview.removeFromSuperview() }
-            completion?()
-        }
+            }, completion: { (bool) -> Void in
+                hasWaitView.removeFromSuperview()
+                for subview in delegateView.subviews where subview.tag == 666 { subview.removeFromSuperview() }
+                completion?()
+        })
     }
     
     private class func animateIn(delegateView:UIView,backgroundColor:UIColor, center:CGPoint? = nil) {
         
-        
         let activityIndicator:NVActivityIndicatorView = {
             let activityIndicator = NVActivityIndicatorView(
-                frame: CGRect(x: UIScreen.main.bounds.width / 2 - 20 ,y: UIScreen.main.bounds.height / 2 - 20, width: 40, height: 40),
+                frame: CGRect(
+                    x: UIScreen.main.bounds.width / 2 - 20 ,
+                    y: UIScreen.main.bounds.height / 2 - 20,
+                    width: 40,
+                    height: 40),
                 type: .ballScaleRipple,
                 color: UIColor.white)
             return activityIndicator
@@ -59,7 +60,6 @@ final class AnimateWaitView:UIView {
         
         UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             v.alpha = 1
-            
-        }) {(bool) -> Void in }
+        }, completion: {(bool) -> Void in })
     }
 }

@@ -11,7 +11,7 @@ import MapKit
 
 final class HeaderView: UIView {
 
-    @IBOutlet private(set) weak var mapView:    MKMapView!
+    @IBOutlet private(set) weak var mapView:   MKMapView!
     @IBOutlet fileprivate weak var topView:    UIView!
     @IBOutlet fileprivate weak var topLabel:   UILabel!
     

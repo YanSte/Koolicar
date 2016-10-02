@@ -47,13 +47,7 @@ final class KPVehicleTableViewCell: UITableViewCell, ReusableIdentifierCell {
     
     public func setContent(delegate:UIViewController, vehicle: VehicleModel) {
         self.delegate = delegate
-        setupImages(vehicle: vehicle)
-        setupLabel(vehicle: vehicle)
-    }
-    
-    // MARK: Setup content
-    
-    fileprivate func setupImages(vehicle: VehicleModel) {
+        
         // TODO: Ceci est un exemple pour une pagination d'images..
         vehicleSlideshow.setImageInputs(
             [
@@ -61,9 +55,7 @@ final class KPVehicleTableViewCell: UITableViewCell, ReusableIdentifierCell {
                 AlamofireSource(urlString: vehicle.thumbnailUrl)!,
                 AlamofireSource(urlString: vehicle.thumbnailUrl)!
             ])
-    }
-    
-    fileprivate func setupLabel(vehicle: VehicleModel) {
+        
         // TODO: Mettre en place NSLocalizedString String
         vehiculePlaceLabel.text     = "\(vehicle.placesCount) places"
         vehiculeDoorLabel.text      = "\(vehicle.doorsCount) portes"
