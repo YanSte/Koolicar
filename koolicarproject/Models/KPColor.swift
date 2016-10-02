@@ -11,7 +11,8 @@ import UIKit
 public enum KPColor: UInt {
     
     case a = 0xE85310
-    case b = 0x7A9A2B
+    case b = 0xABCBFF
+    case c = 0x0E6FB7
     //...
     
     /**
@@ -22,7 +23,7 @@ public enum KPColor: UInt {
      ```
      - returns: UIColor
      */
-    func color() -> UIColor {
-        return UIColor(rgb: self.rawValue, alphaVal: 1)
+    func color(alpha al:Float = 1) -> UIColor {
+        return UIColor(rgb: self.rawValue, alphaVal: al)
     }
 }

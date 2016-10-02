@@ -26,7 +26,8 @@ public protocol KPVehiclesListViewControllerOutput {
 
 final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesListViewControllerInput {
     
-    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView:   UITableView!
+    @IBOutlet fileprivate weak var topView:     UIView!
     fileprivate weak var headerView:HeaderView!
     
     var output: KPVehiclesListViewControllerOutput!
@@ -45,6 +46,7 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         super.viewDidLoad()
         
         navigationController?.setToolbarHidden(true, animated: false)
+        setupHeaderView()
         setupTableView()
         AnimateWaitView.animateIn(delegateView: view)
         output.fetchVehicleData()
@@ -56,10 +58,14 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
     }
     
     // MARK: Event handling
+    
+    func actionTapScrollToTop() {
+        tableView?.setContentOffset(CGPoint.zero, animated: true)
+    }
     
     // MARK: Display logic
     
@@ -87,18 +93,31 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         UIAlertController.openKPStandardAlert(delegate: self, title: "Un erreur c'est produite", message: description, buttonCancel: "Ok")
     }
     
+    // MARK: ScrollView
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if  scrollView.parallaxHeader.progress > -0.82 {
+            topView.isUserInteractionEnabled = false
+            headerView.animateAtTop()
+        } else {
+            topView.isUserInteractionEnabled = true
+            headerView.animateAtBottom()
+        }
+    }
+    
     // MARK: Setup
     
-    func setupTableView() {
-        // Header View
+    func setupHeaderView() {
         headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as? HeaderView
         headerView.mapView.delegate = self
-        
-        // Table View
-        tableView.parallaxHeader.view = headerView // You can set the parallax header view from the floating view
+        topView.addTapGesture(target: self, action: #selector(KPVehiclesListViewController.actionTapScrollToTop))
+    }
+    
+    func setupTableView() {
+        tableView.parallaxHeader.view = headerView
         tableView.parallaxHeader.height = 365
         tableView.parallaxHeader.mode = MXParallaxHeaderMode.fill
-        tableView.parallaxHeader.minimumHeight = 40
+        tableView.parallaxHeader.minimumHeight = 64
         tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
         tableView.separatorStyle = .none
     }
@@ -122,7 +141,7 @@ extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSour
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.vehicles.count
     }
-
+    
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
     }
