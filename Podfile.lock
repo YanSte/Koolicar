@@ -8,16 +8,14 @@ PODS:
   - MXParallaxHeader (0.5.2)
   - NVActivityIndicatorView (3.0)
   - ObjectMapper (2.0.0)
-  - VBPiledView (1.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.0.0)
   - AlamofireImage (= 3.0.0)
   - ImageSlideshow (from `https://github.com/zvonicek/ImageSlideshow.git`, branch `swift-3`)
-  - MXParallaxHeader
-  - NVActivityIndicatorView
+  - MXParallaxHeader (= 0.5.2)
+  - NVActivityIndicatorView (= 3.0)
   - ObjectMapper (= 2.0.0)
-  - VBPiledView (~> 1.0)
 
 EXTERNAL SOURCES:
   ImageSlideshow:
@@ -36,8 +34,7 @@ SPEC CHECKSUMS:
   MXParallaxHeader: 5070ba8e8af27ec793c0d32ae82cfd2318e59635
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
-  VBPiledView: 714942b1870066ccaf697a733694b422eb8ee460
 
-PODFILE CHECKSUM: 924e295985f6697ee3e02437016ff2a28b9ce434
+PODFILE CHECKSUM: 1c2c27f0a527d843a2888f4c1b504482c66fe201
 
 COCOAPODS: 1.0.1
