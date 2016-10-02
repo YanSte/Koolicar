@@ -2,18 +2,42 @@ PODS:
   - Alamofire (4.0.0)
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
+  - ImageSlideshow (0.6):
+    - ImageSlideshow/Core (= 0.6)
+  - ImageSlideshow/Core (0.6)
+  - MXParallaxHeader (0.5.2)
+  - NVActivityIndicatorView (3.0)
   - ObjectMapper (2.0.0)
+  - VBPiledView (1.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.0.0)
   - AlamofireImage (= 3.0.0)
+  - ImageSlideshow (from `https://github.com/zvonicek/ImageSlideshow.git`, branch `swift-3`)
+  - MXParallaxHeader
+  - NVActivityIndicatorView
   - ObjectMapper (= 2.0.0)
+  - VBPiledView (~> 1.0)
+
+EXTERNAL SOURCES:
+  ImageSlideshow:
+    :branch: swift-3
+    :git: https://github.com/zvonicek/ImageSlideshow.git
+
+CHECKOUT OPTIONS:
+  ImageSlideshow:
+    :commit: bbf742003016330b1e690f82e77d636a7ba5ad34
+    :git: https://github.com/zvonicek/ImageSlideshow.git
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
+  ImageSlideshow: 714e370cdd0ab74e8124be755c8de7f06b9d5240
+  MXParallaxHeader: 5070ba8e8af27ec793c0d32ae82cfd2318e59635
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  VBPiledView: 714942b1870066ccaf697a733694b422eb8ee460
 
-PODFILE CHECKSUM: 894d3a1f118c705bb39067927084f0e27161e373
+PODFILE CHECKSUM: 924e295985f6697ee3e02437016ff2a28b9ce434
 
 COCOAPODS: 1.0.1

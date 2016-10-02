@@ -9,49 +9,90 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import ImageSlideshow
 
 final class KPVehicleTableViewCell: UITableViewCell, ReusableIdentifierCell {
     
-    @IBOutlet fileprivate weak var vehicleImageView: UIImageView!
-    @IBOutlet fileprivate weak var containerView:    UIView!
+    @IBOutlet fileprivate weak var vehiculePlaceLabel:      UILabel!
+    @IBOutlet fileprivate weak var vehiculeFuelLabel:       UILabel!
+    @IBOutlet fileprivate weak var vehiculeDoorLabel:       UILabel!
+    @IBOutlet fileprivate weak var vehiculeGearBoxLabel:    UILabel!
+    @IBOutlet fileprivate weak var vehiculeNameLabel:       UILabel!
+    @IBOutlet fileprivate weak var vehiculeCategoryLabel:   UILabel!
+    @IBOutlet fileprivate weak var vehicleSlideshow:        ImageSlideshow!
+    @IBOutlet fileprivate weak var containerView:           UIView!
+    
+    fileprivate var slideshowTransitioningDelegate: ZoomAnimatedTransitioningDelegate?
+    fileprivate weak var delegate:UIViewController?
     
     static let reusableIdentifier = "KPVehicleTableViewCell"
     
+    // MARK: Cycle life
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 10
-        containerView.layer.masksToBounds = true
+        vehicleSlideshow.backgroundColor = UIColor.white
+        vehicleSlideshow.slideshowInterval = 8.0
+        vehicleSlideshow.pageControlPosition = PageControlPosition.hidden
+        vehicleSlideshow.pageControl.currentPageIndicatorTintColor = UIColor.white;
+        vehicleSlideshow.pageControl.pageIndicatorTintColor = UIColor.black;
+        vehicleSlideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        vehicleSlideshow.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(KPVehicleTableViewCell.click)))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     // MARK: Set Content
     
-    func setContent(vehicle: Vehicle) {
-        resetCell()
-        setupImage(url: vehicle.thumbnailUrl)
+    public func setContent(delegate:UIViewController, vehicle: VehicleModel) {
+        self.delegate = delegate
+        setupImages(vehicle: vehicle)
+        setupLabel(vehicle: vehicle)
     }
     
-    fileprivate func setupImage(url:String) {
-        Alamofire.request(url).responseImage { response in
-            guard let image = response.result.value else {
-                return
-            }
-            UIView.transition(with: self.vehicleImageView,
-                              duration:0.5,
-                              options: UIViewAnimationOptions.transitionCrossDissolve,
-                              animations: { self.vehicleImageView.image = image },
-                              completion: nil)
-            
+    // MARK: Setup content
+    
+    fileprivate func setupImages(vehicle: VehicleModel) {
+        // TODO: Ceci est un exemple pour une pagination d'images..
+        vehicleSlideshow.setImageInputs(
+            [
+                AlamofireSource(urlString: vehicle.thumbnailUrl)!,
+                AlamofireSource(urlString: vehicle.thumbnailUrl)!,
+                AlamofireSource(urlString: vehicle.thumbnailUrl)!
+            ])
+    }
+    
+    fileprivate func setupLabel(vehicle: VehicleModel) {
+        // TODO: Mettre en place NSLocalizedString String
+        vehiculePlaceLabel.text     = "\(vehicle.placesCount) places"
+        vehiculeDoorLabel.text      = "\(vehicle.doorsCount) portes"
+        vehiculeFuelLabel.text      = "\(vehicle.fuelTypeCd == 0 ? "Essence" : "Gazole")"
+        vehiculeGearBoxLabel.text   = "\(vehicle.gearsTypeCd == 0 ? "Manuelle" : "Automatique")"
+        vehiculeNameLabel.text      = vehicle.brand + " " + vehicle.vehicle_model + " " + "\(vehicle.year)"
+        vehiculeCategoryLabel.text  = vehicle.category
+    }
+    
+    // MARK: Handler event
+    
+    public func click() {
+        guard let delegate = delegate else {
+            return
         }
+        let ctr:FullScreenSlideshowViewController = {
+            let c = FullScreenSlideshowViewController()
+            c.pageSelected = {
+                (page: Int) in
+                self.vehicleSlideshow.setScrollViewPage(page, animated: false)
+            }
+            c.initialImageIndex = vehicleSlideshow.scrollViewPage
+            c.inputs = vehicleSlideshow.images
+            slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: vehicleSlideshow, slideshowController: c)
+            c.transitioningDelegate = slideshowTransitioningDelegate
+            return c
+        }()
+        
+        delegate.present(ctr, animated: true, completion: nil)
     }
-    
-    fileprivate func resetCell() {
-        vehicleImageView.image = nil
-    }
-    
 }

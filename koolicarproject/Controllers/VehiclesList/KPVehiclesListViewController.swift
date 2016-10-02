@@ -10,6 +10,8 @@
 //
 
 import UIKit
+import MXParallaxHeader
+import MapKit
 
 public protocol KPVehiclesListViewControllerInput {
     func displayVehicles()
@@ -17,13 +19,15 @@ public protocol KPVehiclesListViewControllerInput {
 }
 
 public protocol KPVehiclesListViewControllerOutput {
-    var vehicles: [Vehicle] { get }
+    var vehicles: [VehicleModel] { get }
     func fetchVehicleData()
+    func fetchFilteredVehicleData(coordinates:[CLLocationCoordinate2D])
 }
 
 final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesListViewControllerInput {
     
     @IBOutlet fileprivate weak var tableView: UITableView!
+    fileprivate weak var headerView:HeaderView!
     
     var output: KPVehiclesListViewControllerOutput!
     var router: KPVehiclesListRouter!
@@ -39,8 +43,23 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setToolbarHidden(true, animated: false)
+        
+        // Header View
+        headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as? HeaderView
+        headerView.mapView.delegate = self
+        
+        // Table View
+        tableView.parallaxHeader.view = headerView // You can set the parallax header view from the floating view
+        tableView.parallaxHeader.height = 300
+        tableView.parallaxHeader.mode = MXParallaxHeaderMode.fill
+        tableView.parallaxHeader.minimumHeight = 0
         tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
         tableView.separatorStyle = .none
+        
+        AnimateWaitView.animateIn(delegateView: view)
+        output.fetchVehicleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +68,7 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output.fetchVehicleData()
+
     }
     
     // MARK: Event handling
@@ -57,7 +76,17 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
     // MARK: Display logic
     
     func displayVehicles() {
+        AnimateWaitView.animateOut(delegateView: view)
         tableView.reloadData()
+    }
+    
+    func displayVehiclesMap() {
+        for v in output.vehicles {
+            let dropPin = MKPointAnnotation()
+            dropPin.coordinate = v.location
+            dropPin.title = v.brand + " " + v.vehicle_model
+            headerView.mapView.addAnnotation(dropPin)
+        }
     }
     
     func displayFailVehicles(description:String) {
@@ -76,19 +105,26 @@ extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSour
             else {
                 return getCellError()
         }
-        cell.setContent(vehicle: vehicleAtIndex)
+        cell.setContent(delegate: self, vehicle: vehicleAtIndex)
         return cell
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.vehicles.count
     }
-    
-    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
+
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 420
+        return 400
+    }
+}
+
+// MARK: - MKMapViewDelegate
+
+extension KPVehiclesListViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        output.fetchFilteredVehicleData(coordinates:
+            mapView.annotations(in: mapView.visibleMapRect).flatMap({ ($0 as? MKAnnotation)?.coordinate })
+        )
     }
 }

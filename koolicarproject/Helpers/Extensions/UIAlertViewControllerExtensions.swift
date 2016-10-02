@@ -27,7 +27,7 @@ public extension UIAlertController {
         completionCancel: ((_ action:UIAlertAction) -> ())?  = nil) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.view.tintColor = ROBColor.A.color()
+        alertController.view.tintColor = KPColor.a.color()
         
         let cancelAction = UIAlertAction(title: buttonCancel, style: .cancel, handler: completionCancel)
         alertController.addAction(cancelAction)
@@ -38,8 +38,6 @@ public extension UIAlertController {
                 alertController.addAction(cancelAction)
             }
         }
-        
-        
         
         delegate.present(alertController, animated: true) {
             completionOpenedAlert?()

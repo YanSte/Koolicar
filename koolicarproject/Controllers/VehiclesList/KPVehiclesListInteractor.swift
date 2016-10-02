@@ -10,15 +10,17 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 public protocol KPVehiclesListInteractorInput {
+    var vehicles: [VehicleModel] { get }
     func fetchVehicleData()
-    var vehicles: [Vehicle] { get }
+    func fetchFilteredVehicleData(coordinates:[CLLocationCoordinate2D])
 }
 
 public protocol KPVehiclesListInteractorOutput {
     func presentVehicles()
+    func presentVehiclesMap()
     func presentFailVehicles(error: KPVehiclesListError)
 }
 
@@ -27,11 +29,12 @@ final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInterac
     var output: KPVehiclesListInteractorOutput!
     var worker: KPVehiclesListWorker!
     
-    private(set) var vehicles: [Vehicle] = []
+    private(set) var vehicles: [VehicleModel] = []
+    fileprivate var vehiclesStorage: [VehicleModel] = []
     
     // MARK: Business logic
-    //TODO: intépreter les retours fails
-    func fetchVehicleData() {
+    
+    public func fetchVehicleData() {
         guard KPHelpers.isConnectedToNetwork() else {
             output.presentFailVehicles(error: .noNetwork)
             return
@@ -40,14 +43,53 @@ final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInterac
             result in
             switch (result) {
             case let .success(result):
-                self.vehicles = result
+                self.vehiclesStorage = result
+                self.vehicles = self.vehiclesStorage
                 self.output.presentVehicles()
+                self.output.presentVehiclesMap()
                 break
-            
+                
             case .failure(_):
                 self.output.presentFailVehicles(error: .noData)
                 break
             }
         }
+    }
+    
+    public func fetchFilteredVehicleData(coordinates: [CLLocationCoordinate2D]) {
+        DispatchQueue.global(qos: .userInitiated).async {  [weak self] () -> Void in
+            guard let vehicles = self?.filterVehiclesByCoordinates(coordinates: coordinates) else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.vehicles = vehicles
+                self?.output.presentVehicles()
+            }
+        }
+    }
+    
+    fileprivate func filterVehiclesByCoordinates(coordinates: [CLLocationCoordinate2D]) -> [VehicleModel]? {
+        var vehiclesFilter = [VehicleModel]()
+        var reload = false
+        for coordinate in coordinates {
+            let vehiclesFilterCoordinate = self.vehiclesStorage.filter({
+                $0.location.latitude ==  coordinate.latitude &&
+                    $0.location.longitude ==  coordinate.longitude
+                
+            })
+            
+            for v in vehiclesFilterCoordinate {
+                if !vehiclesFilter.contains(v) {
+                    vehiclesFilter.append(v)
+                }
+            }
+            if !reload {
+                for v in vehiclesFilter {
+                    reload = !self.vehicles.contains(v) ? true : false
+                }
+            }
+        }
+        // Pour ne recharger que si besoin
+        return (reload || !(vehiclesFilter.count == self.vehicles.count)) ? vehiclesFilter : nil
     }
 }

@@ -11,9 +11,13 @@
 
 import UIKit
 
+/**
+ * KPVehiclesListError
+ * Gestion des erreur sur le controller KPVehiclesList avec description pour l'affichage en popup
+ */
 public enum KPVehiclesListError: String, Error {
-    case noNetwork =  "Vous n'avez pas internet"
-    case noData =  "Aucun donnée est disponible"
+    case noNetwork  =  "Vous n'avez pas internet"
+    case noData     =  "Aucun donnée est disponible"
 }
 
 struct KPVehiclesListModel {

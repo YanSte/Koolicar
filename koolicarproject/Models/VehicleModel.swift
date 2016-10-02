@@ -8,23 +8,57 @@
 
 import Foundation
 import ObjectMapper
+import CoreLocation
 
-public struct Vehicle: Mappable {
+// MARK: Equatable
+
+extension VehicleModel: Equatable {}
+
+public func ==(lhs: VehicleModel, rhs: VehicleModel) -> Bool {
+    return lhs.id == rhs.id && lhs.longitude == rhs.longitude && lhs.latitude == rhs.latitude
+}
+
+// MARK: Vehicle Model
+
+public struct VehicleModelVehicleModel: Mappable {
     
-    private(set) var id:            Int!
-    private(set) var addressId:     Int!
-    private(set) var year:          Int!
-    private(set) var doorsCount:    Int!
-    private(set) var placesCount:   Int!
-    private(set) var fuelTypeCd:    Int!
-    private(set) var gearsTypeCd:   Int!
-    private(set) var vehicle_model: String!
-    private(set) var brand:         String!
-    private(set) var category:      String!
-    private(set) var thumbnailUrl:  String!
+    private(set) var id:            Int
+    private(set) var addressId:     Int
+    private(set) var year:          Int
+    private(set) var doorsCount:    Int
+    private(set) var placesCount:   Int
+    // TODO: Mettre en place un enumérateur pour fuelTypeCd et gearsTypeCd
+    private(set) var fuelTypeCd:    Int
+    private(set) var gearsTypeCd:   Int
+    private(set) var vehicle_model: String
+    private(set) var brand:         String
+    private(set) var category:      String
+    private(set) var thumbnailUrl:  String
     private(set) var distance:      String?
-    private(set) var latitude:      Double!
-    private(set) var longitude:     Double!
+    private(set) var latitude:      Double
+    private(set) var longitude:     Double
+    
+    public var location: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    // MARK: Init
+    
+    public init() {
+        self.id = 0
+        self.addressId = 0
+        self.year = 0
+        self.doorsCount = 0
+        self.placesCount = 0
+        self.fuelTypeCd = 0
+        self.gearsTypeCd = 0
+        self.vehicle_model = ""
+        self.brand = ""
+        self.category = ""
+        self.thumbnailUrl = ""
+        self.latitude = 0
+        self.longitude = 0
+    }
     
     public init?(map: Map) {
         guard
@@ -45,10 +79,12 @@ public struct Vehicle: Mappable {
             else {
                 return nil
         }
+        self.init()
         mapping(map: map)
     }
     
-    // Mappable
+    // MARK: Mappable
+    
     public mutating func mapping(map: Map) {
         id              <- map["id"]
         addressId       <- map["address_id"]

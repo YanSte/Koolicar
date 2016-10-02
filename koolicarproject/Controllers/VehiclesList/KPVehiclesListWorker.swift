@@ -24,15 +24,7 @@ final class KPVehiclesListWorker {
                     completion(.failure(.noData))
                     return
                 }
-                var vehiclesStorage = [Vehicle]()
-                for vehicul in vehiculs {
-                    if let vehicles = Vehicle(JSON: vehicul) {
-                        vehiclesStorage.append(vehicles)
-                    } else {
-                        KPDebug.print(val: "[KPVehiclesListWorker][requestVehicles][⚠️] Can't parse Vehicle")
-                    }
-                }
-                completion(.success(vehiclesStorage))
+                completion(.success(vehiculs.flatMap({ VehicleModel(JSON: $0) })))
                 break
             case let .failure(error):
                 completion(.failure(error))

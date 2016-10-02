@@ -9,10 +9,12 @@
 import Foundation
 
 typealias ResultAPI           = (Result<[String:AnyObject], WSResponse>) -> ()
-typealias ResultAPIVehicles   = (Result<[Vehicle], WSResponse>) -> ()
+typealias ResultAPIVehicles   = (Result<[VehicleModel], WSResponse>) -> ()
 
 /**
- * Enumerateur pour la config des WS
+ * WSConfig
+ *
+ * Enumerateur pour la configuration des appelles au WS
  */
 public enum WSConfig {
     
@@ -25,12 +27,14 @@ public extension WSConfig {
     var baseURL: String {
         return "http://yannickstephan.com/test/"
     }
+    
     var path: String {
         switch self {
         case .Cars(let name):
             return "cars/\(name)"
         }
     }
+    
     var absolutPath: String {
         return baseURL + path
     }

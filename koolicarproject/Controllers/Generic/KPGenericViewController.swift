@@ -27,18 +27,9 @@ public class KPGenericViewController: UIViewController {
     
     // MARK: Internal method
     
-    internal func closeKeyboard() {
-        self.resignFirstResponder()
-        self.view.endEditing(true)
-    }
-    internal func addGestureCloseKeyboard(view:UIView) {
-        view.addTapGesture(tapNumber: 1, target: self, action: #selector(KPGenericViewController.closeKeyboard))
-    }
-    
     internal func getCellError() -> UITableViewCell {
         let cell = UITableViewCell()
         cell.backgroundColor = UIColor.red
         return cell
     }
-
 }

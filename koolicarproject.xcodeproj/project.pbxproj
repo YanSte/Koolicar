@@ -13,7 +13,7 @@
 		88367BCC1D9E5492003AE4DC /* VehiclesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCB1D9E5492003AE4DC /* VehiclesTests.swift */; };
 		88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BCF1D9E6029003AE4DC /* KPDebug.swift */; };
 		88367BD31D9E6148003AE4DC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD21D9E6148003AE4DC /* Result.swift */; };
-		88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD51D9E6814003AE4DC /* Vehicle.swift */; };
+		88367BD61D9E6814003AE4DC /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD51D9E6814003AE4DC /* VehicleModel.swift */; };
 		88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BD81D9E69B8003AE4DC /* WSConfig.swift */; };
 		88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDA1D9E69CB003AE4DC /* WSResponse.swift */; };
 		88367BE41D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BDD1D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift */; };
@@ -31,7 +31,10 @@
 		88367BF91D9EA357003AE4DC /* ReusableIdentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */; };
 		88367BFB1D9EA46A003AE4DC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BFA1D9EA46A003AE4DC /* ArrayExtensions.swift */; };
 		88367BFD1D9EA524003AE4DC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BFC1D9EA524003AE4DC /* UIViewExtensions.swift */; };
-		88367BFF1D9EB2AB003AE4DC /* KPHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367BFE1D9EB2AB003AE4DC /* KPHelpers.swift */; };
+		88367C0B1D9EBDC9003AE4DC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88367C0A1D9EBDC9003AE4DC /* MapKit.framework */; };
+		88367C0D1D9EC539003AE4DC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88367C0C1D9EC539003AE4DC /* HeaderView.xib */; };
+		88367C101D9ED773003AE4DC /* AlamofireSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367C0F1D9ED773003AE4DC /* AlamofireSource.swift */; };
+		88367C121D9EE002003AE4DC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88367C111D9EE002003AE4DC /* HeaderView.swift */; };
 		8866218C1D9D721B00DE3011 /* koolicarprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866218B1D9D721B00DE3011 /* koolicarprojectUITests.swift */; };
 		886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8866219D1D9D735600DE3011 /* AppDelegate.swift */; };
 		886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8866219F1D9D735600DE3011 /* LaunchScreen.storyboard */; };
@@ -42,6 +45,8 @@
 		886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BB1D9D73CA00DE3011 /* KPGenericRouter.swift */; };
 		886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BC1D9D73CA00DE3011 /* KPGenericViewController.swift */; };
 		886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886621BD1D9D73CA00DE3011 /* KPGenericWorker.swift */; };
+		88743FF51DA142DA0074474D /* AnimateWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88743FF41DA142DA0074474D /* AnimateWait.swift */; };
+		88743FF71DA149E30074474D /* KPHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88743FF61DA149E30074474D /* KPHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +76,7 @@
 		88367BCB1D9E5492003AE4DC /* VehiclesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesTests.swift; sourceTree = "<group>"; };
 		88367BCF1D9E6029003AE4DC /* KPDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDebug.swift; sourceTree = "<group>"; };
 		88367BD21D9E6148003AE4DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		88367BD51D9E6814003AE4DC /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		88367BD51D9E6814003AE4DC /* VehicleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		88367BD81D9E69B8003AE4DC /* WSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSConfig.swift; sourceTree = "<group>"; };
 		88367BDA1D9E69CB003AE4DC /* WSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSResponse.swift; sourceTree = "<group>"; };
 		88367BDD1D9E7B65003AE4DC /* KPVehiclesListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPVehiclesListConfigurator.swift; sourceTree = "<group>"; };
@@ -89,7 +94,10 @@
 		88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableIdentifierCell.swift; sourceTree = "<group>"; };
 		88367BFA1D9EA46A003AE4DC /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		88367BFC1D9EA524003AE4DC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		88367BFE1D9EB2AB003AE4DC /* KPHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHelpers.swift; sourceTree = "<group>"; };
+		88367C0A1D9EBDC9003AE4DC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		88367C0C1D9EC539003AE4DC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		88367C0F1D9ED773003AE4DC /* AlamofireSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSource.swift; sourceTree = "<group>"; };
+		88367C111D9EE002003AE4DC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		886621681D9D721B00DE3011 /* koolicarproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = koolicarproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886621771D9D721B00DE3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8866217C1D9D721B00DE3011 /* koolicarprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = koolicarprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +114,8 @@
 		886621BB1D9D73CA00DE3011 /* KPGenericRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericRouter.swift; sourceTree = "<group>"; };
 		886621BC1D9D73CA00DE3011 /* KPGenericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericViewController.swift; sourceTree = "<group>"; };
 		886621BD1D9D73CA00DE3011 /* KPGenericWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPGenericWorker.swift; sourceTree = "<group>"; };
+		88743FF41DA142DA0074474D /* AnimateWait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateWait.swift; sourceTree = "<group>"; };
+		88743FF61DA149E30074474D /* KPHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPHelpers.swift; sourceTree = "<group>"; };
 		B82CB12F22202B39A061A063 /* Pods-koolicarproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarproject/Pods-koolicarproject.release.xcconfig"; sourceTree = "<group>"; };
 		C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_koolicarprojectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA052ABD74D832B939B13F11 /* Pods-koolicarprojectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-koolicarprojectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-koolicarprojectUITests/Pods-koolicarprojectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88367C0B1D9EBDC9003AE4DC /* MapKit.framework in Frameworks */,
 				3EBA5828D90681A185AD1CE5 /* Pods_koolicarproject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +200,8 @@
 			children = (
 				88367BEC1D9E8508003AE4DC /* KPVehicleTableViewCell.xib */,
 				88367BEE1D9E854D003AE4DC /* KPVehicleTableViewCell.swift */,
+				88367C0C1D9EC539003AE4DC /* HeaderView.xib */,
+				88367C111D9EE002003AE4DC /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +212,15 @@
 				88367BF81D9EA357003AE4DC /* ReusableIdentifierCell.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		88367C0E1D9ED768003AE4DC /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				88367C0F1D9ED773003AE4DC /* AlamofireSource.swift */,
+				88743FF41DA142DA0074474D /* AnimateWait.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		8866215F1D9D721B00DE3011 = {
@@ -304,6 +326,8 @@
 		886621A31D9D735600DE3011 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				88743FF61DA149E30074474D /* KPHelpers.swift */,
+				88367C0E1D9ED768003AE4DC /* Class */,
 				886621A41D9D735600DE3011 /* Extensions */,
 			);
 			path = Helpers;
@@ -327,9 +351,8 @@
 				88367BD71D9E69B8003AE4DC /* Webservice */,
 				88367BD11D9E6141003AE4DC /* Enum */,
 				88367BCF1D9E6029003AE4DC /* KPDebug.swift */,
-				88367BD51D9E6814003AE4DC /* Vehicle.swift */,
+				88367BD51D9E6814003AE4DC /* VehicleModel.swift */,
 				88367BF21D9E8CA6003AE4DC /* KPColor.swift */,
-				88367BFE1D9EB2AB003AE4DC /* KPHelpers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +392,7 @@
 		BF3B20504A9541578868C540 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88367C0A1D9EBDC9003AE4DC /* MapKit.framework */,
 				3A299E0DA5D3723569D4D1E6 /* Pods_koolicarproject.framework */,
 				186186801E818E7B755D6F1A /* Pods_koolicarprojectTests.framework */,
 				C7C6F28F6E806BE7581BBC47 /* Pods_koolicarprojectUITests.framework */,
@@ -453,7 +477,8 @@
 				TargetAttributes = {
 					886621671D9D721B00DE3011 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 7CBP5Q272D;
+						ProvisioningStyle = Automatic;
 					};
 					8866217B1D9D721B00DE3011 = {
 						CreatedOnToolsVersion = 8.0;
@@ -495,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				886621AC1D9D735600DE3011 /* LaunchScreen.storyboard in Resources */,
+				88367C0D1D9EC539003AE4DC /* HeaderView.xib in Resources */,
 				88367BED1D9E8508003AE4DC /* KPVehicleTableViewCell.xib in Resources */,
 				886621AE1D9D735600DE3011 /* Assets.xcassets in Resources */,
 				886621AD1D9D735600DE3011 /* Main.storyboard in Resources */,
@@ -664,27 +690,30 @@
 				88367BDB1D9E69CB003AE4DC /* WSResponse.swift in Sources */,
 				88367BD31D9E6148003AE4DC /* Result.swift in Sources */,
 				88367BE91D9E7B65003AE4DC /* KPVehiclesListViewController.swift in Sources */,
+				88743FF71DA149E30074474D /* KPHelpers.swift in Sources */,
 				886621AB1D9D735600DE3011 /* AppDelegate.swift in Sources */,
 				88367BE51D9E7B65003AE4DC /* KPVehiclesListInteractor.swift in Sources */,
 				88367BFB1D9EA46A003AE4DC /* ArrayExtensions.swift in Sources */,
 				886621C01D9D73CA00DE3011 /* KPGenericRouter.swift in Sources */,
 				88367BF31D9E8CA6003AE4DC /* KPColor.swift in Sources */,
 				88367BF91D9EA357003AE4DC /* ReusableIdentifierCell.swift in Sources */,
+				88367C101D9ED773003AE4DC /* AlamofireSource.swift in Sources */,
 				88367BD91D9E69B8003AE4DC /* WSConfig.swift in Sources */,
 				88367BF11D9E8C57003AE4DC /* UIAlertViewControllerExtensions.swift in Sources */,
 				88367BEA1D9E7B65003AE4DC /* KPVehiclesListWorker.swift in Sources */,
 				88367BE61D9E7B65003AE4DC /* KPVehiclesListModels.swift in Sources */,
 				88367BD01D9E6029003AE4DC /* KPDebug.swift in Sources */,
-				88367BFF1D9EB2AB003AE4DC /* KPHelpers.swift in Sources */,
+				88743FF51DA142DA0074474D /* AnimateWait.swift in Sources */,
 				886621BE1D9D73CA00DE3011 /* KPGenericInteractor.swift in Sources */,
 				88367BE71D9E7B65003AE4DC /* KPVehiclesListPresenter.swift in Sources */,
 				886621BF1D9D73CA00DE3011 /* KPGenericPresenter.swift in Sources */,
 				88367BF51D9E8CD9003AE4DC /* UIColorExtensions.swift in Sources */,
 				886621C21D9D73CA00DE3011 /* KPGenericWorker.swift in Sources */,
 				88367BFD1D9EA524003AE4DC /* UIViewExtensions.swift in Sources */,
-				88367BD61D9E6814003AE4DC /* Vehicle.swift in Sources */,
+				88367BD61D9E6814003AE4DC /* VehicleModel.swift in Sources */,
 				886621C11D9D73CA00DE3011 /* KPGenericViewController.swift in Sources */,
 				88367BEF1D9E854D003AE4DC /* KPVehicleTableViewCell.swift in Sources */,
+				88367C121D9EE002003AE4DC /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,7 +864,8 @@
 			baseConfigurationReference = 706E803FBC8D70919A46B21A /* Pods-koolicarproject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
 				INFOPLIST_FILE = koolicarproject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarproject;
@@ -849,7 +879,8 @@
 			baseConfigurationReference = B82CB12F22202B39A061A063 /* Pods-koolicarproject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7CBP5Q272D;
 				INFOPLIST_FILE = koolicarproject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.koolicar.koolicarproject;

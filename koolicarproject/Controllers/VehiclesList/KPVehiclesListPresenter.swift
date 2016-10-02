@@ -13,11 +13,13 @@ import UIKit
 
 public protocol KPVehiclesListPresenterInput {
     func presentVehicles()
+    func presentVehiclesMap()
     func presentFailVehicles(error: KPVehiclesListError)
 }
 
 public protocol KPVehiclesListPresenterOutput: class {
     func displayVehicles()
+    func displayVehiclesMap()
     func displayFailVehicles(description:String)
 }
 
@@ -29,6 +31,10 @@ final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
     
     func presentVehicles() {
         output.displayVehicles()
+    }
+    
+    public func presentVehiclesMap() {
+        output.displayVehiclesMap()
     }
     
     public func presentFailVehicles(error: KPVehiclesListError) {

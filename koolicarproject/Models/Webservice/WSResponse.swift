@@ -9,7 +9,8 @@
 import Foundation
 
 /**
- * Enumerateur pour les retours WS et code error
+ * WSResponse
+ * @brief: Enumerateur pour les retours WS et code error
  */
 public enum WSResponse: Int, Error {
     
@@ -22,7 +23,7 @@ public enum WSResponse: Int, Error {
     case impossibleToParse = -1
     case noData = -2
     
-    var description: String {
+    public var description: String {
         switch self {
         case .unknown:           return "Successful? / Fail? Server error"
         case .response200:       return "Successful"

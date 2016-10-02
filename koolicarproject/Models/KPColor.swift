@@ -8,10 +8,10 @@
 
 import UIKit
 
-public enum ROBColor: UInt {
+public enum KPColor: UInt {
     
-    case A = 0xE85310
-    case B = 0x7A9A2B
+    case a = 0xE85310
+    case b = 0x7A9A2B
     //...
     
     /**
