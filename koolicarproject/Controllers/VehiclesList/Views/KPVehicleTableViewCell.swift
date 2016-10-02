@@ -20,7 +20,6 @@ final class KPVehicleTableViewCell: UITableViewCell, ReusableIdentifierCell {
     @IBOutlet fileprivate weak var vehiculeNameLabel:       UILabel!
     @IBOutlet fileprivate weak var vehiculeCategoryLabel:   UILabel!
     @IBOutlet fileprivate weak var vehicleSlideshow:        ImageSlideshow!
-    @IBOutlet fileprivate weak var containerView:           UIView!
     
     fileprivate var slideshowTransitioningDelegate: ZoomAnimatedTransitioningDelegate?
     fileprivate weak var delegate:UIViewController?

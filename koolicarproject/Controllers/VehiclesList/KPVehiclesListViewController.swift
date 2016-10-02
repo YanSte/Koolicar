@@ -45,19 +45,7 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         super.viewDidLoad()
         
         navigationController?.setToolbarHidden(true, animated: false)
-        
-        // Header View
-        headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as? HeaderView
-        headerView.mapView.delegate = self
-        
-        // Table View
-        tableView.parallaxHeader.view = headerView // You can set the parallax header view from the floating view
-        tableView.parallaxHeader.height = 300
-        tableView.parallaxHeader.mode = MXParallaxHeaderMode.fill
-        tableView.parallaxHeader.minimumHeight = 0
-        tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
-        tableView.separatorStyle = .none
-        
+        setupTableView()
         AnimateWaitView.animateIn(delegateView: view)
         output.fetchVehicleData()
     }
@@ -87,10 +75,32 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
             dropPin.title = v.brand + " " + v.vehicle_model
             headerView.mapView.addAnnotation(dropPin)
         }
+        
+        if let v = output.vehicles.first {
+            let span = MKCoordinateSpanMake(0.08, 0.08)
+            let region = MKCoordinateRegion(center: v.location, span: span)
+            headerView.mapView.setRegion(region, animated: true)
+        }
     }
     
     func displayFailVehicles(description:String) {
         UIAlertController.openKPStandardAlert(delegate: self, title: "Un erreur c'est produite", message: description, buttonCancel: "Ok")
+    }
+    
+    // MARK: Setup
+    
+    func setupTableView() {
+        // Header View
+        headerView = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as? HeaderView
+        headerView.mapView.delegate = self
+        
+        // Table View
+        tableView.parallaxHeader.view = headerView // You can set the parallax header view from the floating view
+        tableView.parallaxHeader.height = 365
+        tableView.parallaxHeader.mode = MXParallaxHeaderMode.fill
+        tableView.parallaxHeader.minimumHeight = 40
+        tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
+        tableView.separatorStyle = .none
     }
 }
 

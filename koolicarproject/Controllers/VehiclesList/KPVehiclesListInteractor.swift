@@ -45,7 +45,7 @@ final class KPVehiclesListInteractor: KPGenericInteractor, KPVehiclesListInterac
             case let .success(result):
                 self.vehiclesStorage = result
                 self.vehicles = self.vehiclesStorage
-                self.output.presentVehicles()
+                //self.output.presentVehicles()
                 self.output.presentVehiclesMap()
                 break
                 

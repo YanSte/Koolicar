@@ -46,17 +46,11 @@
                             <constraint firstItem="H96-Kt-dcl" firstAttribute="centerY" secondItem="Noi-jt-eaK" secondAttribute="centerY" id="2n2-pE-hQ4"/>
                             <constraint firstItem="EP1-5B-vap" firstAttribute="centerY" secondItem="H96-Kt-dcl" secondAttribute="centerY" id="JFs-e5-CGY"/>
                             <constraint firstItem="H96-Kt-dcl" firstAttribute="leading" secondItem="Noi-jt-eaK" secondAttribute="leading" constant="10" id="l0h-hf-lWi"/>
+                            <constraint firstItem="H96-Kt-dcl" firstAttribute="top" secondItem="Noi-jt-eaK" secondAttribute="top" constant="10" id="m5X-2G-TJs"/>
                             <constraint firstItem="EP1-5B-vap" firstAttribute="leading" secondItem="H96-Kt-dcl" secondAttribute="trailing" constant="10" id="pFh-pM-zw8"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6g-5s-2e4">
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJ2-82-7i1" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <frame key="frameInset" width="400" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ2-82-7i1" customClass="ImageSlideshow" customModule="ImageSlideshow">
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIA-hG-nm3">
@@ -147,21 +141,19 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="cIA-hG-nm3" secondAttribute="trailing" id="91E-3N-Aql"/>
+                    <constraint firstItem="cIA-hG-nm3" firstAttribute="top" secondItem="YJ2-82-7i1" secondAttribute="bottom" id="AHw-np-j6F"/>
                     <constraint firstItem="cIA-hG-nm3" firstAttribute="trailing" secondItem="Noi-jt-eaK" secondAttribute="trailing" id="H88-EJ-0FX"/>
+                    <constraint firstItem="YJ2-82-7i1" firstAttribute="leading" secondItem="ari-cj-5cQ" secondAttribute="leading" id="Hu9-1R-gie"/>
                     <constraint firstItem="cIA-hG-nm3" firstAttribute="leading" secondItem="ari-cj-5cQ" secondAttribute="leading" id="Izb-ow-SUj"/>
-                    <constraint firstItem="cIA-hG-nm3" firstAttribute="trailing" secondItem="z6g-5s-2e4" secondAttribute="trailing" id="R7B-SN-hAH"/>
-                    <constraint firstItem="z6g-5s-2e4" firstAttribute="top" secondItem="Noi-jt-eaK" secondAttribute="bottom" id="Wm1-Xc-R3y"/>
                     <constraint firstItem="cIA-hG-nm3" firstAttribute="leading" secondItem="Noi-jt-eaK" secondAttribute="leading" id="aTj-gg-8z4"/>
                     <constraint firstItem="cIA-hG-nm3" firstAttribute="top" secondItem="ari-cj-5cQ" secondAttribute="top" constant="250" id="bzI-Tp-zfW"/>
-                    <constraint firstItem="cIA-hG-nm3" firstAttribute="top" secondItem="z6g-5s-2e4" secondAttribute="bottom" id="dKA-ki-v6C"/>
+                    <constraint firstItem="YJ2-82-7i1" firstAttribute="top" secondItem="Noi-jt-eaK" secondAttribute="bottom" id="efw-9T-vve"/>
                     <constraint firstAttribute="bottomMargin" secondItem="cIA-hG-nm3" secondAttribute="bottom" constant="-9" id="fI2-4e-mhf"/>
-                    <constraint firstItem="z6g-5s-2e4" firstAttribute="top" secondItem="ari-cj-5cQ" secondAttribute="top" constant="41" id="gmD-JW-f3d"/>
-                    <constraint firstItem="cIA-hG-nm3" firstAttribute="leading" secondItem="z6g-5s-2e4" secondAttribute="leading" id="r7H-9q-Udt"/>
+                    <constraint firstAttribute="trailing" secondItem="YJ2-82-7i1" secondAttribute="trailing" id="hKi-xS-s1o"/>
                     <constraint firstItem="Noi-jt-eaK" firstAttribute="top" secondItem="ari-cj-5cQ" secondAttribute="top" id="vYk-uh-f0B"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="containerView" destination="z6g-5s-2e4" id="Alo-dS-LUT"/>
                 <outlet property="vehicleSlideshow" destination="YJ2-82-7i1" id="MmB-Kd-jtB"/>
                 <outlet property="vehiculeCategoryLabel" destination="EP1-5B-vap" id="8PW-qM-KpO"/>
                 <outlet property="vehiculeDoorLabel" destination="hKo-ST-16x" id="PPf-Mg-n6o"/>
