@@ -9,9 +9,11 @@
 import Foundation
 
 /**
+ * WSResponse
+ *
  * Enumerateur pour les retours WS et code error
  */
-enum WSResponse: Int, Error {
+public enum WSResponse: Int, Error {
     
     case response200   = 200
     case response400   = 400
@@ -20,8 +22,9 @@ enum WSResponse: Int, Error {
     case response500   = 500
     case unknown = 0
     case impossibleToParse = -1
+    case noData = -2
     
-    var description: String {
+    public var description: String {
         switch self {
         case .unknown:           return "Successful? / Fail? Server error"
         case .response200:       return "Successful"
@@ -30,6 +33,7 @@ enum WSResponse: Int, Error {
         case .response403:       return "Forbidden"
         case .response500 :      return "Server Error"
         case .impossibleToParse: return "Fail to Parse"
+        case .noData:            return "No storage"
         }
     }
 }

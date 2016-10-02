@@ -24,4 +24,12 @@ public class KPGenericViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: Internal method
+    
+    internal func getCellError() -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.backgroundColor = UIColor.red
+        return cell
+    }
 }

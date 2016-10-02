@@ -17,6 +17,8 @@ public class KPGenericWorker {
     /**
      * Generic method alamofire
      *
+     * Permets d'interpréter les codes Http, les codes error dans le JSON du retour du WS pour l'interprèter avec un enumérateur des errors possibles, (Communication, retour WS)
+     *
      */
     static func resquest(
         method: Alamofire.HTTPMethod,
@@ -29,6 +31,7 @@ public class KPGenericWorker {
                 response.result.isSuccess,
                 let value = response.result.value as? [String:AnyObject] else {
                     // Exemple pour savoir plus sur l'erreur HTTP
+                    // Peut avoir value["coderror"] == nil // exemple insertion d'un utilisateur existant
                     if let httpError = response.result.error,
                         let responseWS = WSResponse(rawValue: httpError._code) {
                         KPDebug.print(val: "[KPGenericWorker][resquest][⚠️] Http Code error: \(response.result.error))")

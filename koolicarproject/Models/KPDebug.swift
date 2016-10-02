@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum KPDebug {
+public enum KPDebug {
     
     static var debug = false
     
-    static func print(val:String) {
+    static func print(val:Any) {
         if debug {
             Swift.print(val)
         }
