@@ -23,7 +23,7 @@ public protocol KPVehiclesListPresenterOutput: class {
     func displayFailVehicles(description:String)
 }
 
-final class KPVehiclesListPresenter: KPVehiclesListPresenterInput {
+final class KPVehiclesListPresenter: KPGenericPresenter, KPVehiclesListPresenterInput {
     
     weak var output: KPVehiclesListPresenterOutput!
     

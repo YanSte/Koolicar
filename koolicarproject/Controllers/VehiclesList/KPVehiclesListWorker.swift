@@ -11,7 +11,7 @@
 
 import UIKit
 
-final class KPVehiclesListWorker {
+final class KPVehiclesListWorker:KPGenericWorker {
     
     // MARK: Business Logic
     
