@@ -120,6 +120,7 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         tableView.parallaxHeader.minimumHeight = 64
         tableView.register(UINib(nibName: KPVehicleTableViewCell.reusableIdentifier, bundle: nil), forCellReuseIdentifier: KPVehicleTableViewCell.reusableIdentifier)
         tableView.separatorStyle = .none
+        tableView.rowHeight = 400
     }
 }
 
@@ -140,10 +141,6 @@ extension KPVehiclesListViewController: UITableViewDelegate, UITableViewDataSour
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return output.vehicles.count
-    }
-    
-    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
     }
 }
 
