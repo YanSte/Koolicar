@@ -52,15 +52,6 @@ final class KPVehiclesListViewController: KPGenericViewController, KPVehiclesLis
         output.fetchVehicleData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     // MARK: Event handling
     
     func actionTapScrollToTop() {
